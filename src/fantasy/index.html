@@ -156,6 +156,7 @@
             },
             RemoveFromTeam(player) {
                 this.player.team.name = null;
+                this.$emit('close');
             }
         }
     })
