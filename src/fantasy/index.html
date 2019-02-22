@@ -36,26 +36,26 @@
                     </button>
                 </header><!-- modal__header -->
                 <div class="modal__body">
-                    <div class="player">
-                        <h2 class="player__name" v-if="player">{{player.name.first}} {{player.name.last}}</h2>
+                    <div class="player" v-if="player">
+                        <h2 class="player__name">{{player.name.first}} {{player.name.last}}</h2>
                         <div class="player__wrapper">
                             <div class="player__img">
                                 <div class="player-img__inner">
-                                    <img src={{player.img.src}} alt="Jose Altuve">
+                                    <img v-bind:src="player.img.src" v-bind:alt="player.img.alt">
                                 </div>
                             </div><!-- player__img -->
                             <div class="player__content">
                                 <div class="player__bio">
                                     <div class="player__general">
-                                        <span v-if="player">#{{player.general.number}} {{player.general.position}}</span>
-                                        <span v-if="player">Bats: {{player.general.bats}}, Throws: {{player.general.bats}}</span>
+                                        <span>#{{player.general.number}} {{player.general.position}}</span>
+                                        <span>Bats: {{player.general.bats}}, Throws: {{player.general.bats}}</span>
                                     </div>
                                     <ul class="player__metadata">
-                                        <li><span>Birth Date</span><span v-if="player">{{player.metadata.birthDate}}</span></li>
-                                        <li><span>Birthplace</span><span v-if="player">{{player.metadata.birthPlace}}</span></li>
-                                        <li><span>Experience</span><span v-if="player">{{player.metadata.experience}} years</span></li>
-                                        <li><span>College</span><span v-if="player">{{player.metadata.birthDate}}</span></li>
-                                        <li><span>Ht/Wt</span><span v-if="player">{{player.metadata.height}}, {{player.metadata.weight}} lbs.</span></li>
+                                        <li><span>Birth Date</span><span>{{player.metadata.birthDate}}</span></li>
+                                        <li><span>Birthplace</span><span>{{player.metadata.birthPlace}}</span></li>
+                                        <li><span>Experience</span><span>{{player.metadata.experience}} years</span></li>
+                                        <li><span>College</span><span>{{player.metadata.birthDate}}</span></li>
+                                        <li><span>Ht/Wt</span><span>{{player.metadata.height}}, {{player.metadata.weight}} lbs.</span></li>
                                     </ul>
                                 </div> <!-- player__bio -->
                                 <div class="player__stats">
@@ -71,10 +71,10 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td v-if="player">{{player.stats.avg}}</td>
-                                                <td v-if="player">{{player.stats.hr}}</td>
-                                                <td v-if="player">{{player.stats.rbi}}</td>
-                                                <td v-if="player">{{player.stats.obp}}</td>
+                                                <td>{{player.stats.avg}}</td>
+                                                <td>{{player.stats.hr}}</td>
+                                                <td>{{player.stats.rbi}}</td>
+                                                <td>{{player.stats.obp}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
